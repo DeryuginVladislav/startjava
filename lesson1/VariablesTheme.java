@@ -21,10 +21,10 @@ public class VariablesTheme {
         System.out.println("\nРасчет стоимости товара со скидкой");
         int penPrice = 100;
         int bookPrice = 200;
-        double sale = (penPrice + bookPrice) * 0.11;
-        System.out.println("Сумма скидки = " + sale);
+        double discount = (penPrice + bookPrice) * 0.11;
+        System.out.println("Сумма скидки = " + discount);
         System.out.println("Общая стоимость товаров со скидкой = " +
-                ((penPrice + bookPrice) - sale));
+                ((penPrice + bookPrice) - discount));
 
         System.out.println("\nВывод слова JAVA");
         System.out.println("   J    a  v     v  a");
@@ -41,14 +41,10 @@ public class VariablesTheme {
         System.out.println("Максимальное значение типа int = " + maxInt);
         long maxLong = Long.MAX_VALUE;
         System.out.println("Максимальное значение типа long = " + maxLong);
-        maxByte++;
-        System.out.println("Максимальное значение типа byte после инкремента = " + maxByte);
-        maxShort++;
-        System.out.println("Максимальное значение типа short после инкремента = " + maxShort);
-        maxInt++;
-        System.out.println("Максимальное значение типа int после инкремента = " + maxInt);
-        maxLong++;
-        System.out.println("Максимальное значение типа long после инкремента = " + maxLong);
+        System.out.println("Максимальное значение типа byte после инкремента = " + (++maxByte));
+        System.out.println("Максимальное значение типа short после инкремента = " + (++maxShort));
+        System.out.println("Максимальное значение типа int после инкремента = " + (++maxInt));
+        System.out.println("Максимальное значение типа long после инкремента = " + (++maxLong));
         System.out.println("Максимальное значение типа byte после декремента = " + (--maxByte));
         System.out.println("Максимальное значение типа short после декремента = " + (--maxShort));
         System.out.println("Максимальное значение типа int после декремента = " + (--maxInt));
@@ -92,13 +88,14 @@ public class VariablesTheme {
         char bracket = '(';
         char backBracket = ')';
         char underscore = '_';
-        System.out.println("     " + slash + "" + backSlash);
+        System.out.println("     " + (char) slash + (char) backSlash);
         System.out.println("    " + slash + "  " + backSlash);
-        System.out.println("   " + slash + "" + underscore + "" + bracket + " " + backBracket + "" +
-                backSlash);
+        System.out.println("   " + (char) slash + (char) underscore + (char) bracket + " " +
+                (char) backBracket + (char) backSlash);
         System.out.println("  " + slash + "      " + backSlash);
-        System.out.println(" " + slash + "" + underscore + "" + underscore + "" + underscore + "" + underscore +
-                "" + slash + "" + backSlash + "" + underscore + "" + underscore + "" + backSlash);
+        System.out.println(" " + (char) slash + (char) underscore + (char) underscore + 
+                (char) underscore + (char) underscore + (char) slash + (char) backSlash + 
+                (char) underscore + (char) underscore + (char) backSlash);
 
         System.out.println("\nВывод количества сотен, десятков и единиц числа");
         int srcNumber = 123;
@@ -106,9 +103,9 @@ public class VariablesTheme {
         int tens = (srcNumber % 100) / 10;
         int ones = srcNumber % 10;
         System.out.println("Число " + srcNumber + " содержит: ");
-        System.out.println("" + hundreds + " сотня");
-        System.out.println("" + tens + " десятка");
-        System.out.println("" + ones + " единицы");
+        System.out.println(hundreds + " сотню");
+        System.out.println(tens + " десятка");
+        System.out.println(ones + " единицы");
         System.out.println("Сумма его цифр = " + (hundreds + tens + ones));
         System.out.println("А произведение его цифр = " + (hundreds * tens * ones));
 
@@ -116,7 +113,7 @@ public class VariablesTheme {
         int seconds = 86399;
         int hours = seconds / 3600;
         int minutes = (seconds % 3600) / 60;
-        seconds = (seconds % 3600) % 60;
+        seconds = seconds % 60;
         System.out.println(hours + ":" + minutes + ":" + seconds);
     }
 }
