@@ -88,14 +88,12 @@ public class VariablesTheme {
         char bracket = '(';
         char backBracket = ')';
         char underscore = '_';
-        System.out.println("     " + (char) slash + (char) backSlash);
+        System.out.println("     " + slash + backSlash);
         System.out.println("    " + slash + "  " + backSlash);
-        System.out.println("   " + (char) slash + (char) underscore + (char) bracket + " " +
-                (char) backBracket + (char) backSlash);
+        System.out.println("   " + slash + underscore + bracket + " " + backBracket + backSlash);
         System.out.println("  " + slash + "      " + backSlash);
-        System.out.println(" " + (char) slash + (char) underscore + (char) underscore + 
-                (char) underscore + (char) underscore + (char) slash + (char) backSlash + 
-                (char) underscore + (char) underscore + (char) backSlash);
+        System.out.println(" " + slash + underscore + underscore + underscore + underscore + slash +
+                backSlash + underscore + underscore + backSlash);
 
         System.out.println("\nВывод количества сотен, десятков и единиц числа");
         int srcNumber = 123;
@@ -113,7 +111,7 @@ public class VariablesTheme {
         int seconds = 86399;
         int hours = seconds / 3600;
         int minutes = (seconds % 3600) / 60;
-        seconds %= 60;
+        seconds = seconds % 60;
         System.out.println(hours + ":" + minutes + ":" + seconds);
     }
 }
