@@ -1,9 +1,6 @@
 public class MyFirstGame {
     public static void main(String[] args) {
-        int computerNum = 0;
-        while (computerNum == 0) {
-            computerNum = (int) (Math.random() * 101);
-        }
+        int computerNum = 1 + (int) (Math.random() * 100);
         int playerNum = 10;
         int maxNum = 100;
         int minNum = 1;
@@ -18,10 +15,8 @@ public class MyFirstGame {
                 System.out.println("Число " + playerNum + " меньше того, что загадал компьютер");
                 minNum = ++playerNum;
                 playerNum = (maxNum + minNum) / 2;
-                continue;
             }
         }
         System.out.println("Вы победили! Это число - " + playerNum);
-
     }
 }
