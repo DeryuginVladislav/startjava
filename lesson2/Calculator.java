@@ -44,7 +44,7 @@ public class Calculator {
         }
         return 0;
     }
-    
+
     public String getResult() {
         return (num1 + " " + action + " " + num2 + " = " + result);
     }
