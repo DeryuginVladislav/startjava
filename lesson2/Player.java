@@ -1,9 +1,6 @@
-import java.util.Scanner;
-
 public class Player {
     private String name;
     private int num;
-    private Scanner scanner = new Scanner(System.in);
 
     public Player(String name) {
         this.name = name;
@@ -13,11 +10,13 @@ public class Player {
         return name;
     }
 
-    public int setNum() {
+    public void setNum(int num) {
         do {
-            System.out.print(name + " введите число от 1 до 100: ");
-            num = scanner.nextInt();
+            this.num = num;
         } while (num < 1 || num > 100);
+    }
+
+    public int getNum() {
         return num;
     }
 }
