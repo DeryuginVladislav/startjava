@@ -18,22 +18,22 @@ public class Calculator {
 
     public String calculate() {
         switch (operation) {
-            case ('+'):
+            case '+':
                 result = num1 + num2;
                 break;
-            case ('-'):
+            case '-':
                 result = num1 - num2;
                 break;
-            case ('*'):
+            case '*':
                 result = num1 * num2;
                 break;
-            case ('/'):
+            case '/':
                 result = (double) num1 / (double) num2;
                 break;
-            case ('%'):
+            case '%':
                 result = num1 % num2;
                 break;
-            case ('^'):
+            case '^':
                 result = num1;
                 for (int i = 1; i < num2; i++) {
                     result *= num1;
