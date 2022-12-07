@@ -11,9 +11,7 @@ public class Player {
     }
 
     public void setNum(int num) {
-        do {
-            this.num = num;
-        } while (num < 1 || num > 100);
+        this.num = num;
     }
 
     public int getNum() {

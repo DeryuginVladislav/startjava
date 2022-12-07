@@ -1,8 +1,8 @@
 public class Calculator {
     private int num1;
     private int num2;
-    private char action;
-    private double result=0.0;
+    private char operation;
+    private double result;
 
     public void setNum1(int num1) {
         this.num1 = num1;
@@ -12,12 +12,12 @@ public class Calculator {
         this.num2 = num2;
     }
 
-    public void setAction(char action) {
-        this.action = action;
+    public void setAction(char operation) {
+        this.operation = operation;
     }
 
-    public double calculate() {
-        switch (action) {
+    public String calculate() {
+        switch (operation) {
             case ('+'):
                 result = num1 + num2;
                 break;
@@ -42,10 +42,6 @@ public class Calculator {
             default:
                 System.out.println("Неверный знак");
         }
-        return 0;
-    }
-
-    public String getResult() {
-        return (num1 + " " + action + " " + num2 + " = " + result);
+        return (num1 + " " + operation + " " + num2 + " = " + result);
     }
 }
