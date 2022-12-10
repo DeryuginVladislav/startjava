@@ -1,5 +1,3 @@
-package com.startjava.lesson1.final;
-
 public class Calculator {
     public static void main(String[] args) {
         int num1 = 7;

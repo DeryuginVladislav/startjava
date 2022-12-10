@@ -1,5 +1,3 @@
-package com.startjava.lesson1.final;
-
 public class MyFirstGame {
     public static void main(String[] args) {
         int computerNum = 1 + (int) (Math.random() * 100);
