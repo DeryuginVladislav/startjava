@@ -1,24 +1,33 @@
-package com.startjava.lesson4;
+package com.startjava.lesson_2_3_4.array;
 
 public class ArrayTheme {
     public static void main(String[] args) {
         System.out.println("1.Реверс значений массива");
         int[] intArray = {1, 5, 3, 2, 6, 4, 7};
-        getIntArray(intArray);
+        printIntArray(intArray);
         int lenght = intArray.length;
-        for (int i = 0; i < lenght / 2; i++) {
-            intArray[i] = intArray[i] + intArray[lenght - 1 - i];
-            intArray[lenght - 1 - i] = intArray[i] - intArray[lenght - 1 - i];
-            intArray[i] -= intArray[lenght - 1 - i];
+        for (int i = 0; i < lenght; i++) {
+            lenght--;
+            if (i == intArray.length / 2) {
+                continue;
+            }
+            intArray[i] = intArray[i] + intArray[lenght];
+            intArray[lenght] = intArray[i] - intArray[lenght];
+            intArray[i] -= intArray[lenght];
         }
-        getIntArray(intArray);
+        printIntArray(intArray);
 
         System.out.println("\n2.Вывод произведения элементов массива");
-        intArray = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        intArray = new int[10];
         int product = 1;
-        for (int i = 1; i < intArray.length - 1; i++) {
+        for (int i = 0; i < intArray.length; i++) {
+            intArray[i] = i;
+            if (i == 0 || i == 9) {
+                System.out.printf("intArray[%d] = %d%n", i, intArray[i]);
+                continue;
+            }
             product *= intArray[i];
-            System.out.print(i == 8 ? (intArray[i] + " = " + product) : (intArray[i] + " * "));
+            System.out.print(intArray[i] + (i != 8 ? " * " : (" = " + product + "\n")));
         }
 
         System.out.println("\n3.Удаление элементов массива");
@@ -26,12 +35,8 @@ public class ArrayTheme {
         lenght = doubleArray.length;
         for (int i = 0; i < lenght; i++) {
             doubleArray[i] = Math.random();
-            System.out.printf("%.3f ", doubleArray[i]);
-            if (i == lenght / 2) {
-                System.out.println();
-            }
         }
-        System.out.println();
+        printDoubleArray(doubleArray);
         int zeroCounter = 0;
         for (int i = 0; i < lenght; i++) {
             if (doubleArray[i] > doubleArray[lenght / 2]) {
@@ -39,13 +44,8 @@ public class ArrayTheme {
                 zeroCounter++;
             }
         }
-        for (int i = 0; i < lenght; i++) {
-            System.out.printf("%.3f ", doubleArray[i]);
-            if (i == lenght / 2) {
-                System.out.println();
-            }
-        }
-        System.out.println("\nКоличество обнуленных ячеек = " + zeroCounter);
+        printDoubleArray(doubleArray);
+        System.out.println("Количество обнуленных ячеек = " + zeroCounter);
 
         System.out.println("\n4.Вывод элементов массива лесенкой в обратном порядке");
         char[] charArray = new char[26];
@@ -107,7 +107,7 @@ public class ArrayTheme {
                 lenghtStringArrayCopy++;
             }
         }
-        getStringArray(stringArray);
+        printStringArray(stringArray);
 
         String[] stringArrayCopy = new String[lenghtStringArrayCopy];
         int start = 0;
@@ -132,17 +132,27 @@ public class ArrayTheme {
                 end = 0;
             }
         }
-        getStringArray(stringArrayCopy);
+        printStringArray(stringArrayCopy);
     }
 
-    private static void getIntArray(int[] intArray) {
+    private static void printIntArray(int[] intArray) {
         for (int num : intArray) {
             System.out.print(num + " ");
-            System.out.println();
         }
+        System.out.println();
     }
 
-    private static void getStringArray(String[] stringArray) {
+    private static void printDoubleArray(double[] doubleArray) {
+        for (int i = 0; i < doubleArray.length; i++) {
+            System.out.printf("%.3f ", doubleArray[i]);
+            if (i == doubleArray.length / 2) {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
+
+    private static void printStringArray(String[] stringArray) {
         for (String string : stringArray) {
             System.out.print(string);
         }
