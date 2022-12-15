@@ -38,8 +38,9 @@ public class ArrayTheme {
         }
         printDoubleArray(doubleArray);
         int zeroCounter = 0;
+        double middleSlot = doubleArray[lenght / 2];
         for (int i = 0; i < lenght; i++) {
-            if (doubleArray[i] > doubleArray[lenght / 2]) {
+            if (doubleArray[i] > middleSlot) {
                 doubleArray[i] = 0;
                 zeroCounter++;
             }
